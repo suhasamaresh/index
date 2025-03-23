@@ -2,6 +2,7 @@
   "name": "index",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -9,19 +10,35 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@octokit/rest": "^21.1.1",
+    "@peculiar/webcrypto": "^1.5.0",
+    "@prisma/client": "^6.5.0",
+    "next": "15.2.3",
+    "next-auth": "^4.24.11",
+    "node-cron": "^3.0.3",
+    "node-vault": "^0.10.2",
+    "pg": "^8.14.1",
+    "prisma": "^6.5.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.2.3"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
+    "@babel/core": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20.17.25",
+    "@types/node-cron": "^3.0.11",
+    "@types/node-vault": "^0.9.1",
+    "@types/pg": "^8.11.11",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
+    "babel-loader": "^10.0.0",
     "eslint": "^9",
     "eslint-config-next": "15.2.3",
-    "@eslint/eslintrc": "^3"
+    "tailwindcss": "^4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2",
+    "webpack": "^5.98.0"
   }
 }
