@@ -10,43 +10,20 @@ export default function SignIn() {
   const router = useRouter();
 
   const handleSubmit = async () => {
+    console.log("Submitting:", { username, password });
     const result = await signIn("credentials", { redirect: false, username, password });
+    console.log("SignIn result:", result);
     if (result?.error) setError(result.error);
     else router.push("/test-encryption");
   };
 
-return (
-    <div>
-        <h1>Sign In</h1>
-        {error && <p style={{ color: "red" }}>{error}</p>}
-        <form
-            onSubmit={(e) => {
-                e.preventDefault();
-                handleSubmit();
-            }}
-        >
-            <div>
-                <label htmlFor="username">Username:</label>
-                <input
-                    type="text"
-                    id="username"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    required
-                />
-            </div>
-            <div>
-                <label htmlFor="password">Password:</label>
-                <input
-                    type="password"
-                    id="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                />
-            </div>
-            <button type="submit">Sign In</button>
-        </form>
+  return (
+    <div style={{ padding: "20px" }}>
+      <h1>Sign In</h1>
+      <input value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
+      <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
+      <button onClick={handleSubmit}>Sign In</button>
+      {error && <p>{error}</p>}
     </div>
-);
+  );
 }
