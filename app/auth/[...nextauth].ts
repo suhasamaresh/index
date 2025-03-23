@@ -13,7 +13,7 @@ declare module "next-auth" {
 }
 import CredentialsProvider from "next-auth/providers/credentials";
 import { PrismaClient } from "@prisma/client";
-import { decryptWithVault } from "../../../lib/vault-client";
+import { decryptWithVault } from "../../lib/vault-client";
 
 const prisma = new PrismaClient();
 
